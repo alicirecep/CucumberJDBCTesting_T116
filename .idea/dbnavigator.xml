@@ -20,7 +20,18 @@ SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;
 
 SELECT mother_name, mother_occupation FROM wonderworld_qa2.students WHERE lastname LIKE 'T%';
 
-Select mother_name, mother_occupation From wonderworld_qa2.students where lastname LIKE 'T%';]]></console>
+Select mother_name, mother_occupation From wonderworld_qa2.students where lastname LIKE 'T%';
+
+Select * from wonderworld_qa2.topic;
+
+UPDATE wonderworld_qa2.topic SET name = 'Sophie' WHERE id = 13;
+
+Select * from wonderworld_qa2.transport_route;
+
+INSERT INTO wonderworld_qa2.transport_route ( id, route_title , is_active) 
+                                    VALUES ( 12, 'Kariyer Yolu' , 'yes');
+
+Select * from wonderworld_qa2.transport_route;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -28,6 +39,9 @@ Select mother_name, mother_occupation From wonderworld_qa2.students where lastna
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="9314e657-a12d-44dd-90a3-600ab49f7278" dataset="wonderworld_qa2.transport_route" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -82,7 +96,7 @@ Select mother_name, mother_occupation From wonderworld_qa2.students where lastna
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="true" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="false" />
           <environment-type value="default" />

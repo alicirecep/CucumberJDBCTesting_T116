@@ -34,7 +34,8 @@ public class DB_Utils {
 
     public static void updateQuery(String query) throws SQLException {
 
-        int st =  statement.executeUpdate(query);
+
+        int st =  getStatement().executeUpdate(query);
 
         System.out.println(st);
 
@@ -108,6 +109,7 @@ public class DB_Utils {
 
     //used to get statement
     public static Statement getStatement() {
+
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {

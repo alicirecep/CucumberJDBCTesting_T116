@@ -7,11 +7,13 @@ import utilities.DB_Utils;
 import utilities.JDBCReusableMethods;
 import utilities.QueryManage;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class DBstepDefinition {
 
@@ -96,4 +98,39 @@ public class DBstepDefinition {
        }
 
     }
+
+    //-------------------------Query04-------------------------------
+    @Given("Update query'si hazirlanip calistirilir")
+    public void update_query_si_hazirlanip_calistirilir() throws SQLException {
+
+        String updateQuery= ConfigReader.getProperty("query04");
+        String updateName= ConfigReader.getProperty("updateName");
+        String updateID= ConfigReader.getProperty("updateID");
+
+        DB_Utils.updatePrepared(updateQuery,updateName,updateID);
+
+
+    }
+    @Given("Update isleminin yapildigi dogrulanir")
+    public void update_isleminin_yapildigi_dogrulanir() {
+
+
+
+    }
+    //---------Query05---------------
+
+    @Given("Kayit ekleme query'si hazirlanir ve calistirilir.")
+    public void kayit_ekleme_query_si_hazirlanir_ve_calistirilir() throws SQLException {
+
+        String addQuery=ConfigReader.getProperty("query05");
+
+       int rowAffected = statement.executeUpdate(addQuery);
+
+       assertTrue(rowAffected>0);
+
+    }
+
+
+
+
 }
