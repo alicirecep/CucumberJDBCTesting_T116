@@ -130,7 +130,18 @@ public class DBstepDefinition {
 
     }
 
+//--------------------query06--------------------
 
+    @Given("Delete query'si hazirlanir ve calistirilir")
+    public void delete_query_si_hazirlanir_ve_calistirilir() throws SQLException {
+
+    String deleteQuery= ConfigReader.getProperty("query06");
+
+    int deleteRowCount= statement.executeUpdate(deleteQuery);
+
+    assertTrue(deleteRowCount>0);
+
+    }
 
 
 }
