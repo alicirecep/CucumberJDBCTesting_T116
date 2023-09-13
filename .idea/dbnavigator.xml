@@ -16,7 +16,11 @@
       <console name="wonderworld_t116" type="STANDARD" schema="wonderworld_qa2" session="Main"><![CDATA[SELECT COUNT(*) FROM wonderworld_qa2.chat_users WHERE create_staff_id = 1;
 Select * from wonderworld_qa2.chat_users;
 
-SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;]]></console>
+SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;
+
+SELECT mother_name, mother_occupation FROM wonderworld_qa2.students WHERE lastname LIKE 'T%';
+
+Select mother_name, mother_occupation From wonderworld_qa2.students where lastname LIKE 'T%';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
